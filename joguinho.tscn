@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://je402msjsjro"]
+
+[ext_resource type="Script" uid="uid://c2ll5aq6w3hls" path="res://joguinho.gd" id="1_yot6h"]
+[ext_resource type="Texture2D" uid="uid://cdwopbs862dpv" path="res://Pink City.jpg" id="2_vsdtt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx4t8"]
+size = Vector2(2340.5, 35)
+
+[node name="joguinho" type="Node2D" unique_id=1220122926]
+script = ExtResource("1_yot6h")
+
+[node name="fundo" type="Sprite2D" parent="." unique_id=1113144247]
+position = Vector2(579.43756, 335.2836)
+scale = Vector2(1.5667459, 1.5783404)
+texture = ExtResource("2_vsdtt")
+
+[node name="fundo2" type="Sprite2D" parent="." unique_id=1146576353]
+position = Vector2(1738.5, 335)
+scale = Vector2(1.5828805, 1.5772946)
+texture = ExtResource("2_vsdtt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1674519754]
+
+[node name="chao" type="Sprite2D" parent="." unique_id=1630883250]
+
+[node name="chao2" type="Sprite2D" parent="." unique_id=331748275]
+
+[node name="chaofisico" type="StaticBody2D" parent="." unique_id=768613919]
+position = Vector2(-4, 0)
+
+[node name="corpochao" type="CollisionShape2D" parent="chaofisico" unique_id=1650802022]
+position = Vector2(1165, 659.5)
+shape = SubResource("RectangleShape2D_cx4t8")

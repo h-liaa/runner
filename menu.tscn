@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://bkb16gm4f73x5"]
+
+[ext_resource type="Script" uid="uid://dgimt6jufu4rr" path="res://menu.gd" id="1_4hy44"]
+[ext_resource type="Texture2D" uid="uid://l6wrm2rmjlgv" path="res://recursos/download.jpg" id="1_mae5d"]
+[ext_resource type="FontFile" uid="uid://cwo45d2qq0dng" path="res://recursos/Wizards' Magic.ttf" id="2_4hy44"]
+[ext_resource type="FontFile" uid="uid://cad1gaguch338" path="res://recursos/arialnarrow.ttf" id="3_ytr4m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vsb4k"]
+texture = ExtResource("1_mae5d")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytr4m"]
+bg_color = Color(0.6862745, 0.36862746, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l48gv"]
+bg_color = Color(0.6862745, 0.36862746, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="menu" type="Control" unique_id=337173794]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4hy44")
+
+[node name="fundo" type="Panel" parent="." unique_id=1706834821]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_vsb4k")
+
+[node name="título" type="Label" parent="." unique_id=1698129001]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -411.0
+offset_top = 80.0
+offset_right = 430.0
+offset_bottom = 258.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.685, 0.37, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.32900015, 0, 0.47, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("2_4hy44")
+theme_override_font_sizes/font_size = 165
+text = "Good Thing"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="botões" type="VBoxContainer" parent="." unique_id=2015437357]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -202.0
+offset_top = -277.0
+offset_right = 217.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="jogar" type="Button" parent="botões" unique_id=1416085142]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_ytr4m")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_ytr4m")
+text = "JOGAR :)"
+
+[node name="sair" type="Button" parent="botões" unique_id=242941776]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ytr4m")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_l48gv")
+text = "SAIR :("
+
+[connection signal="pressed" from="botões/jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="botões/sair" to="." method="_on_sair_pressed"]
