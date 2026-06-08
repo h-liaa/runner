@@ -7,21 +7,42 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	
-	$fundo.position.x -= velocidade*delta
-	$fundo2.position.x -= velocidade*delta
-	if $fundo.position.x < -1152: 
-		$fundo.position.x = 1152 
-	if $fundo2.position.x < -1152:
-		$fundo2.position.x = 1152
+	$Fundo.position.x -= velocidade*delta
+	$Fundo2.position.x -= velocidade*delta
+	if $Fundo.position.x < -1152: 
+		$Fundo.position.x = 1152 
+	if $Fundo2.position.x < -1152:
+		$Fundo2.position.x = 1152
+		
+	$balao1.position.x -= velocidade*delta
+	$balao1_2.position.x -= velocidade*delta
+	if $balao1.position.x < -1152: 
+		$balao1.position.x = 1152 
+	if $balao1_2.position.x < -1152:
+		$balao1_2.position.x = 1152
+		
+	$Fundo.position.x   -= velocidade*delta*0.05
+	$Fundo2.position.x  -= velocidade*delta*0.05
+	$Chao.position.x    -= velocidade*delta*2
+	$Chao2.position.x   -= velocidade*delta*2
+	
+	$balao1.position.x   -= velocidade*delta*1.5
+	$balao1_2.position.x  -= velocidade*delta*1
+	$balao2.position.x    -= velocidade*delta*1.5
+	$balao2_2.position.x   -= velocidade*delta*1
+
 		
 	
-	$chao.position.x -= velocidade*delta
-	$chao2.position.x -= velocidade*delta
-	if $chao.position.x < -1152: 
-		$chao.position.x = 1152 
-	if $chao2.position.x < -1152:
-		$chao2.position.x = 1152
-	$fundo.position.x   -= velocidade*delta*0.05
-	$fundo2.position.x  -= velocidade*delta*0.05
-	$chao.position.x    -= velocidade*delta*2
-	$chao2.position.x   -= velocidade*delta*2
+	$Chao.position.x -= velocidade*delta
+	$Chao2.position.x -= velocidade*delta
+	if $Chao.position.x < -1152: 
+		$Chao.position.x = 1152 #
+	if $Chao2.position.x < -1152:
+		$Chao2.position.x = 1152
+		
+	$balao2.position.x -= velocidade*delta
+	$balao2_2.position.x -= velocidade*delta
+	if $balao2.position.x < -1152: 
+		$balao2.position.x = 1152 
+	if $balao2_2.position.x < -1152:
+		$balao2_2.position.x = 1152

@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bkb16gm4f73x5"]
 
 [ext_resource type="Script" uid="uid://dgimt6jufu4rr" path="res://menu.gd" id="1_4hy44"]
-[ext_resource type="Texture2D" uid="uid://l6wrm2rmjlgv" path="res://recursos/download.jpg" id="1_mae5d"]
 [ext_resource type="FontFile" uid="uid://cwo45d2qq0dng" path="res://recursos/Wizards' Magic.ttf" id="2_4hy44"]
+[ext_resource type="Texture2D" uid="uid://c2cbpoaqooosg" path="res://download.jpg" id="2_ytr4m"]
 [ext_resource type="FontFile" uid="uid://cad1gaguch338" path="res://recursos/arialnarrow.ttf" id="3_ytr4m"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vsb4k"]
-texture = ExtResource("1_mae5d")
+texture = ExtResource("2_ytr4m")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytr4m"]
 bg_color = Color(0.6862745, 0.36862746, 1, 1)

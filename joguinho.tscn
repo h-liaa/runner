@@ -1,33 +1,100 @@
 [gd_scene format=3 uid="uid://je402msjsjro"]
 
 [ext_resource type="Script" uid="uid://c2ll5aq6w3hls" path="res://joguinho.gd" id="1_yot6h"]
-[ext_resource type="Texture2D" uid="uid://cdwopbs862dpv" path="res://Pink City.jpg" id="2_vsdtt"]
+[ext_resource type="Texture2D" uid="uid://mp0vn4y1bjyr" path="res://recursos/You can use this for anything.jpg" id="2_cx4t8"]
+[ext_resource type="Texture2D" uid="uid://dabledtjn0gss" path="res://recursos/1092826665836611607-removebg-preview.png" id="2_vsdtt"]
+[ext_resource type="Texture2D" uid="uid://dtgpivroosp2a" path="res://recursos/download__4_-removebg-preview.png" id="3_gq081"]
+[ext_resource type="Texture2D" uid="uid://bpb6di3oel1rq" path="res://recursos/rockstar-removebg-preview.png" id="4_gseer"]
+[ext_resource type="Script" uid="uid://brbi1ca14qb5e" path="res://jogador.gd" id="6_n6pii"]
+[ext_resource type="Texture2D" uid="uid://iumj6w7cn5hu" path="res://recursos/sprites/1.png" id="6_t06i1"]
+[ext_resource type="Texture2D" uid="uid://bjcq57i554gg1" path="res://recursos/sprites/3.png" id="7_n6pii"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx4t8"]
-size = Vector2(2340.5, 35)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yot6h"]
+size = Vector2(2450.5, 121)
 
-[node name="joguinho" type="Node2D" unique_id=1220122926]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csfec"]
+size = Vector2(177, 237)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ydf16"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_n6pii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_t06i1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="jogo" type="Node2D" unique_id=862241823]
 script = ExtResource("1_yot6h")
 
-[node name="fundo" type="Sprite2D" parent="." unique_id=1113144247]
-position = Vector2(579.43756, 335.2836)
-scale = Vector2(1.5667459, 1.5783404)
+[node name="Fundo" type="Sprite2D" parent="." unique_id=1206914476]
+position = Vector2(0, 3.0517578e-05)
+scale = Vector2(1.5638587, 1.557971)
+texture = ExtResource("2_cx4t8")
+centered = false
+
+[node name="Fundo2" type="Sprite2D" parent="." unique_id=1631887601]
+position = Vector2(1152.0001, 0)
+scale = Vector2(1.736413, 1.557971)
+texture = ExtResource("2_cx4t8")
+centered = false
+
+[node name="balao1" type="Sprite2D" parent="." unique_id=125309950]
+position = Vector2(917, 416)
+scale = Vector2(0.30620158, 0.32438022)
+texture = ExtResource("3_gq081")
+centered = false
+
+[node name="balao1_2" type="Sprite2D" parent="." unique_id=1902635542]
+position = Vector2(469.90463, 193.92209)
+scale = Vector2(0.5443816, 0.42831165)
+texture = ExtResource("4_gseer")
+
+[node name="balao2" type="Sprite2D" parent="." unique_id=421078783]
+position = Vector2(2193, 416)
+scale = Vector2(0.35364103, 0.33964944)
+texture = ExtResource("3_gq081")
+centered = false
+
+[node name="balao2_2" type="Sprite2D" parent="." unique_id=240180509]
+position = Vector2(1556, 186.47206)
+scale = Vector2(0.5560002, 0.45811185)
+texture = ExtResource("4_gseer")
+
+[node name="Chao" type="Sprite2D" parent="." unique_id=730638164]
+position = Vector2(0, 563)
+scale = Vector2(1.6887757, 3.1632655)
 texture = ExtResource("2_vsdtt")
+centered = false
 
-[node name="fundo2" type="Sprite2D" parent="." unique_id=1146576353]
-position = Vector2(1738.5, 335)
-scale = Vector2(1.5828805, 1.5772946)
+[node name="Chao2" type="Sprite2D" parent="." unique_id=1134353935]
+position = Vector2(1152.0001, 563)
+scale = Vector2(1.8732994, 3.1590135)
 texture = ExtResource("2_vsdtt")
+centered = false
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1674519754]
+[node name="ChaoFisico" type="StaticBody2D" parent="." unique_id=2031983372]
 
-[node name="chao" type="Sprite2D" parent="." unique_id=1630883250]
+[node name="CorpoChao" type="CollisionShape2D" parent="ChaoFisico" unique_id=563510233]
+position = Vector2(1215.75, 631.5)
+shape = SubResource("RectangleShape2D_yot6h")
 
-[node name="chao2" type="Sprite2D" parent="." unique_id=331748275]
+[node name="jogador" type="CharacterBody2D" parent="." unique_id=1701955838]
+script = ExtResource("6_n6pii")
 
-[node name="chaofisico" type="StaticBody2D" parent="." unique_id=768613919]
-position = Vector2(-4, 0)
+[node name="corpo" type="CollisionShape2D" parent="jogador" unique_id=1929838888]
+position = Vector2(170.5, 458.5)
+shape = SubResource("RectangleShape2D_csfec")
+debug_color = Color(0.9803366, 0, 0.3844903, 0.41960785)
 
-[node name="corpochao" type="CollisionShape2D" parent="chaofisico" unique_id=1650802022]
-position = Vector2(1165, 659.5)
-shape = SubResource("RectangleShape2D_cx4t8")
+[node name="imagem" type="AnimatedSprite2D" parent="jogador" unique_id=200277572]
+position = Vector2(175.99998, 453)
+scale = Vector2(1.1298343, 1.0701754)
+sprite_frames = SubResource("SpriteFrames_ydf16")
+frame = 1
+frame_progress = 0.42343813
